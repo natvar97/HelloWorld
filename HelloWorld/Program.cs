@@ -6,17 +6,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            byte number = 255;
-            // checked throws an exception if overthrowing happens
-            checked
-            {
-                number = (byte)(number + 1);
-            }
-           
-            Console.WriteLine(number);
-
-
+            const float Pi = 3.14f;\
         }
     }
 }
