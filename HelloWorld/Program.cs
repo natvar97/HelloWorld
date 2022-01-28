@@ -1,4 +1,5 @@
 ﻿using HelloWorld.Math;
+using System;
 
 namespace HelloWorld
 {
@@ -7,14 +8,30 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var person = new Person();
-            person.firstName = "Urvashi";
-            person.lastName = "Prajapati";
-            person.Introduce();
+//            int[] numbers = new int[3] {10,20,30};
+            var numbers = new int[3] {10,20,30};
+            Console.WriteLine(numbers[0]);
+            Console.WriteLine(numbers[1]);
+            Console.WriteLine(numbers[2]);
 
-            var calculator = new Calculator();
-            var sum = calculator.Add(20, 10);
-            System.Console.WriteLine(sum);
+            // create different arrays for checking which values
+            // they allocate when not initialized
+
+            var flags = new bool[3];
+
+            flags[0] = true;
+
+            Console.WriteLine(flags[0]);
+            Console.WriteLine(flags[1]);
+            Console.WriteLine(flags[2]);
+
+            var strings = new string[3];
+
+            Console.WriteLine(strings[0]);
+            Console.WriteLine(strings[1]);
+            Console.WriteLine(strings[2]);
+
+            var names = new string[3] { "Natu" , "Uru" ,"Parents" };
 
         }
     }
