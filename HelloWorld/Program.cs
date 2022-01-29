@@ -3,34 +3,47 @@ using System;
 
 namespace HelloWorld
 {
-    public  class PersonMain
-    {
-        public int Age;
-    }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            var number = 20;
-            Increment(number);
-            Console.WriteLine(number);
+            int hour = 10;
 
-            var person = new PersonMain() { Age = 20 };
-            MakeOld(person);
-            Console.WriteLine(person.Age);
+            // if-else
+            if(hour > 0 && hour < 12)
+                Console.WriteLine("it is morning");
+            else if (hour >12 && hour < 18 )
+                Console.WriteLine("it is afternoon");
+            else
+                Console.WriteLine("it is evening");
+
+
+            bool isGoldCustomer = true;
+            float price = (isGoldCustomer) ? 99.99f : 49.99f;
+            Console.WriteLine(price);
+
+            // switch statements
+
+            var season = Season.Autumn;
+
+            switch(season)
+            {
+                case Season.Autumn:
+                    Console.WriteLine("It is very dry");
+                    break;
+                case Season.Summer:
+                    Console.WriteLine("It is very hot");
+                    break;
+                case Season.Spring:
+                    Console.WriteLine("It is very greenery environment");
+                    break;
+                case Season.Winter:
+                    Console.WriteLine("It is very cool environment");
+                    break;
+            }
+
+
         }
-
-        public static void Increment(int number)
-        {
-            number += 10;
-            Console.WriteLine("Number in Increment {0}", number);
-        }
-
-        public static void MakeOld(PersonMain person)
-        {
-            person.Age += 10;
-        }
-
     }
 }
