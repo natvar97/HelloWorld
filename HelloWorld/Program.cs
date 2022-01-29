@@ -3,35 +3,29 @@ using System;
 
 namespace HelloWorld
 {
+    public enum ShippingMethods
+    {
+        RegularMail = 1,
+        RegisteredMail = 2,
+        Express = 3
+    }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-//            int[] numbers = new int[3] {10,20,30};
-            var numbers = new int[3] {10,20,30};
-            Console.WriteLine(numbers[0]);
-            Console.WriteLine(numbers[1]);
-            Console.WriteLine(numbers[2]);
+            var method = ShippingMethods.Express;
+            Console.WriteLine((int) method);
 
-            // create different arrays for checking which values
-            // they allocate when not initialized
+            var methodId = 3;
+            Console.WriteLine((ShippingMethods) methodId);
 
-            var flags = new bool[3];
+            Console.WriteLine(method.ToString());
 
-            flags[0] = true;
+            var methodName = "Express";
+            var shippingMethod = (ShippingMethods) Enum.Parse(typeof(ShippingMethods), methodName);
 
-            Console.WriteLine(flags[0]);
-            Console.WriteLine(flags[1]);
-            Console.WriteLine(flags[2]);
-
-            var strings = new string[3];
-
-            Console.WriteLine(strings[0]);
-            Console.WriteLine(strings[1]);
-            Console.WriteLine(strings[2]);
-
-            var names = new string[3] { "Natu" , "Uru" ,"Parents" };
+            Console.WriteLine(shippingMethod);
 
         }
     }
