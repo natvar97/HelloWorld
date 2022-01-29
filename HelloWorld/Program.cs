@@ -3,30 +3,34 @@ using System;
 
 namespace HelloWorld
 {
-    public enum ShippingMethods
+    public  class PersonMain
     {
-        RegularMail = 1,
-        RegisteredMail = 2,
-        Express = 3
+        public int Age;
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            var method = ShippingMethods.Express;
-            Console.WriteLine((int) method);
+            var number = 20;
+            Increment(number);
+            Console.WriteLine(number);
 
-            var methodId = 3;
-            Console.WriteLine((ShippingMethods) methodId);
-
-            Console.WriteLine(method.ToString());
-
-            var methodName = "Express";
-            var shippingMethod = (ShippingMethods) Enum.Parse(typeof(ShippingMethods), methodName);
-
-            Console.WriteLine(shippingMethod);
-
+            var person = new PersonMain() { Age = 20 };
+            MakeOld(person);
+            Console.WriteLine(person.Age);
         }
+
+        public static void Increment(int number)
+        {
+            number += 10;
+            Console.WriteLine("Number in Increment {0}", number);
+        }
+
+        public static void MakeOld(PersonMain person)
+        {
+            person.Age += 10;
+        }
+
     }
 }
