@@ -3,75 +3,120 @@ using System;
 
 namespace HelloWorld
 {
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            // excercise - 1 
+            // excercise - 1 : remainder
             /*
-            Console.WriteLine("Enter number:");
-            var number = int.Parse(Console.ReadLine());
-            if (number > 0 && number <= 10 )
-                Console.WriteLine("Valid");
-            else
-                Console.WriteLine("Invalid");
-            */
-
-
-            // excercise - 2
-            // find max number
-            /*
-            Console.WriteLine("Enter Number1: ");
-            var number1 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter Number2: ");
-            var number2 = int.Parse(Console.ReadLine());
-
-            var maxNumber = (number1 < number2) ? number2 : number1;
-
-            Console.WriteLine("Max Number: {0}", maxNumber);
-            */
-
-
-            // excercise - 3
-            // print image type as users width and height
-            /*
-            Console.Write("Enter Your Image width: ");
-            var width = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter Your Image Height: ");
-            var height = int.Parse(Console.ReadLine());
-
-            var imageType = (width > height) ? "Landscape" : "Portrait";
-
-            Console.WriteLine("Image Type: {0}", imageType);
-            */
-
-            // excercise - 4
-            // program for license suspension
-
-            Console.Write("Enter your speed limit: ");
-            var speedLimit = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter your car speed: ");
-            var carSpeed = int.Parse(Console.ReadLine());
-
-            if(carSpeed < speedLimit)
+            var count = 0;
+            for(var i = 0; i <= 100; i++)
             {
-                Console.WriteLine("Ok");
-            } else
-            {
-                var extraSpeed = carSpeed - speedLimit;
-                var demerit = (int) extraSpeed / 5;
-
-                if(demerit <= 12)
-                    Console.WriteLine("Demerit: {0}", demerit);
-                else {
-                    Console.WriteLine("Demerit: {0}", demerit);
-                    Console.WriteLine("License suspended");
+                if(i % 3 == 0 )
+                {
+                    count++;
                 }
             }
+            Console.WriteLine("Counts: " + count);
+            */
+
+            // excercise - 2 : 
+            /*
+            var sum = 0;
+            while(true)
+            {
+                Console.Write("Enter a number or type \"ok\" to exit: ");
+                var input = Console.ReadLine();
+                if(input.ToLower() == "ok")
+                {
+                    Console.WriteLine("sum of entered number: " + sum);
+                    break;
+                }
+                try
+                {
+                    sum += int.Parse(input);
+                } 
+                catch(Exception) 
+                {
+                    Console.WriteLine("You entered invalid number");
+                    continue;
+                }
+            }
+            */
+
+            // excercise - 3:
+            /*
+            Console.Write("Enter number: ");
+            var number = 0;
+            try
+            {
+                number = int.Parse(Console.ReadLine());
+                var result = 1;
+                for (var i = number; i > 0; i--)
+                {
+                    result *= i;
+                }
+                Console.WriteLine(number + "! = " + result);
+            } catch (Exception)
+            {
+                Console.WriteLine("You entered invalid number");
+            }
+            */
+
+            // excercise - 4:
+            /*
+            var random = new Random();
+            var randomNumber = random.Next(1, 10);
+            Console.WriteLine("Random Number: " + randomNumber);
+
+            for(var i = 0; i < 4; i++)
+            {
+                Console.Write("Enter a number between 1-10 : ");
+                try
+                {
+                    var number = int.Parse(Console.ReadLine());
+                    if(number == randomNumber)
+                    {
+                        Console.WriteLine("You won");
+                        break;
+                    }
+                    else
+                    {
+                        if(i < 3)
+                        {
+                            Console.WriteLine("You loose, make another try: remain trials: " + (3 - i));
+                        } else {
+                            Console.WriteLine("You lost the game.");
+                        }
+                    }
+                } catch (Exception)
+                {
+                    Console.WriteLine("You entered invalid number. remain trials: " + (3 - i));
+                    continue;
+                }
+            }
+           */
+
+            // excercise - 5
+           
+            Console.Write("Enter multiple numbers divide by \',\' comma : ");
+
+            var numberSeries = Console.ReadLine();
+            var numbersStr = numberSeries.Split(',');
+
+
+            var max = 0;
+            foreach (var number in numbersStr)
+            {
+                var value = int.Parse(number);
+                if ( value > max)
+                {
+                    max = value;
+                }
+            }
+
+            Console.WriteLine("maximum number : " + max);
+           
         }
     }
 }
