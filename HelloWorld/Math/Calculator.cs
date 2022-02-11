@@ -12,5 +12,17 @@ namespace HelloWorld.Math
         {
             return a + b;
         }
+
+        public int Add(params int[] numbers)
+        {
+            var sum = 0;
+            foreach (var numebr in numbers)
+            {
+                sum += numebr;
+            }
+
+            return sum;
+        }
+
     }
 }
