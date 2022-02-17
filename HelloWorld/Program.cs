@@ -12,26 +12,9 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // try catch method
-            /*try
-            {
-                var number = int.Parse("abc");
-            }
-            catch (Exception e)
-            {
-                throw new InvalidCastException("Invalid number provided for parsing");
-            }*/
-
-            int newNumber;
-            var result = int.TryParse("10", out newNumber);
-            if (result)
-            {
-                Console.WriteLine(newNumber);
-            }
-            else
-            {
-                Console.WriteLine("Conversion failed");
-            }
+            var httpCookie = new HttpCookie();
+            httpCookie["natu"] = "uru";
+            Console.WriteLine(httpCookie["natu"]);
 
         }
 
